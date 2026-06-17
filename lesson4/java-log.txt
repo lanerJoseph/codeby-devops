@@ -1,0 +1,26 @@
+Script started on 2026-06-10 18:06:52+05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="31"]
+                                                                                                                        ]0;root@kali-codeby: ~[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali-codeby[0m[31m[34m)-[[1m[34m[39m~[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[4m[37ms[24m[39m[4m[37ms[24m[39m[38;2;153;153;153mdk current java[39m[15D[4m[37ms[4m[37md[24m[39m[24m[36ms[24m[36md[36mk[39m[39m [39m[1mc[0m[0mc[39mu[39mr[39mr[39me[39mn[39mt[39m [39m[1mj[0m[1mj[39m[1ma[0m[1ma[39m[1mv[0m[1mv[39m[1ma[0m[?1l>[?2004l[0mj[0ma[0mv[0ma
+Current default [1mjava[0m version [1m21.0.6-tem[0m
+                                                                                                                        ]0;root@kali-codeby: ~
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali-codeby[0m[31m[34m)-[[1m[34m[39m~[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1mj[0m[1mj[0m[38;2;153;153;153mava -verison[39m[12D[1mj[39m[1ma[0m[1mj[1ma[39m[1mv[0m[0m[36mj[0m[36ma[0m[36mv[36ma[39m[39m [32m-[39m[32m-[32mv[39m[32mv[32me[39m[32me[32mr[39m[32mr[32ms[39m[39m [39m [39m [32ms[32mi[39m[32mi[32mo[39m[32mo[32mn[39m[?1l>[?2004l
+openjdk version "21.0.6" 2025-01-21 LTS
+OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.6+7 (build 21.0.6+7-LTS, mixed mode, sharing)
+                                                                                                                        ]0;root@kali-codeby: ~
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali-codeby[0m[31m[34m)-[[1m[34m[39m~[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[4m[37ms[24m[39m[4m[37ms[24m[39m[38;2;153;153;153mdk current java[39m[15D[4m[37ms[4m[37md[24m[39m[24m[36ms[24m[36md[36mk[39m[39m [39mu[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11Dse [1mj[0m[1mj[1ma[0m[1ma[1mv[0m[1mv[1ma[0m[0mj[0ma[0mv[0ma 17.0.14-tem[1m [0m[0m [?1l>[?2004l
+
+[1;32mUsing java version 17.0.14-tem in this shell.[0m
+                                                                                                                        ]0;root@kali-codeby: ~
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali-codeby[0m[31m[34m)-[[1m[34m[39m~[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1mj[0m[1mj[0m[38;2;153;153;153mava -version[39m[12D[1mj[39m[1ma[0m[1mj[1ma[39m[1mv[0m[0m[36mj[0m[36ma[0m[36mv[36ma[39m[39m [32m-[39m[32m-[32mv[39m[32mv[32me[39m[32me[32mr[39m[32mr[32ms[39m[32ms[32mi[39m[32mi[32mo[39m[32mo[32mn[39m[?1l>[?2004l
+openjdk version "17.0.14" 2025-01-21
+OpenJDK Runtime Environment Temurin-17.0.14+7 (build 17.0.14+7)
+OpenJDK 64-Bit Server VM Temurin-17.0.14+7 (build 17.0.14+7, mixed mode, sharing)
+                                                                                                                        ]0;root@kali-codeby: ~
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali-codeby[0m[31m[34m)-[[1m[34m[39m~[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[4m[37me[24m[39m[4m[37me[24m[39m[38;2;153;153;153mxit[39m[24m[36me[36mx[39m[4m[37me[4m[37mx[4m[37mi[24m[39m[24m[36me[24m[36mx[24m[36mi[36mt[39m[?1l>[?2004l
+
+Script done on 2026-06-10 18:07:52+05:00 [COMMAND_EXIT_CODE="0"]

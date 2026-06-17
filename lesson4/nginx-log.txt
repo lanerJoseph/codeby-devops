@@ -1,0 +1,427 @@
+Script started on 2026-06-15 09:13:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="113" LINES="32"]
+                                                                                                                 ]0;root@kali: /home/kali[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hssudo sys[8D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [4ms[4my[4ms[24m[4ms[4mt[24m[9D[24m[39ms[24m[39mu[24m[39md[24m[39mo [24ms[24my[24ms[24mtemctl status[21D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [36ms[36my[36ms[36mt[36me[36mm[36mc[36mt[36ml[39m[7C сщвуин-       c[1mc[0m[1mc[1mo[0m[1mo[1md[0m[1md[1me[0m[1me[1mb[0m[1mb[1my[0m[1my[1m-[0m[1m-[1mn[0m[8D[0mc[0mo[0md[0me[0mb[0my[0m-[0mngnix.service[?1l>[?2004l
+[?1h=[0;1;31mUnit codeby-ngnix.service could not be found.[0m[m
+[K[?1l>                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hsudo systemctl status codeby-ngnix.service[42D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [36ms[36my[36ms[36mt[36me[36mm[36mc[36mt[36ml[39m[28C[P[10C [11D[1Cnx.service[9D[?1l>[?2004l
+[?1h=[0;1;32m●[0m codeby-nginx.service - My Custom Nginx Web Server[m
+     Loaded: loaded (]8;;file://kali/etc/systemd/system/codeby-nginx.service\/etc/systemd/system/codeby-nginx.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-06-15 08:55:47 EDT; 19min ago[m
+ Invocation: c7371a166dbe4a2a864b0bd4c0e49d47[m
+    Process: 32164 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)[m
+   Main PID: 32165 (nginx)[m
+      Tasks: 5[0;38:5:245m (limit: 4398)[0m[m
+     Memory: 4.5M (peak: 5.2M)[m
+        CPU: 26ms[m
+     CGroup: /system.slice/codeby-nginx.service[m
+             ├─[0;38:5:245m32165 "nginx: master process /usr/sbin/nginx"[0m[m
+             ├─[0;38:5:245m32166 "nginx: worker process"[0m[m
+             ├─[0;38:5:245m32167 "nginx: worker process"[0m[m
+             ├─[0;38:5:245m32168 "nginx: worker process"[0m[m
+             └─[0;38:5:245m32169 "nginx: worker process"[0m[m
+[m
+Jun 15 08:55:47 kali systemd[1]: Starting codeby-nginx.service - My Custom Nginx Web Server...[m
+Jun 15 08:55:47 kali systemd[1]: Started codeby-nginx.service - My Custom Nginx Web Server.[m
+[K[?1l>                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hsudo systemctl status codeby-nginx.service[42D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [36ms[36my[36ms[36mt[36me[36mm[36mc[36mt[36ml[39m[28C[1C[1C[1C[P[26C [27D[P[25C [26D[P[24C [25D[P[23C [24D[P[22C [23D[P[21C [22D[P[20C [21D[P[19C [20D[P[18C [19D[P[17C [18D[P[16C [17D[P[15C [16D[P[14C [15D[32m-[32mn[32mg[32mi[32mn[32mx[32m.[32ms[32me[32mr[32mv[32mi[32mc[32me[39m[14D[P[13C [14D[39mn[39mg[39mi[39mn[39mx[39m.[39ms[39me[39mr[39mv[39mi[39mc[39me[13D[P[12C [13D[P[11C [12D[P[10C [11D[P[9C [10D.service [9Dservice [8Dervice rvice vice ice ce e  [38;5;244mstatus codeby-nginx.service[39m[27D[39md[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26Daemon-reload[?1l>[?2004l
+                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hsudo systemctl daemon-reload[28D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [36ms[36my[36ms[36mt[36me[36mm[36mc[36mt[36ml[39m[14C [38;5;244md[39m [39m [38;5;244mad[39m [39m [39m [38;5;244moad[39m [39m [39m [39m [38;5;244mload[39m [39m [39m [39m [39m [38;5;244meload[39m [39m [39m [39m [39m [39m [38;5;244mreload[39m [39m [39m [39m [39m [39m [39m [38;5;244m-reload[39m [39m [39m [39m [39m [39m [39m [39m [8D[38;5;244mn-reload[39m[8D [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;5;244mon-reload[39m[9D [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;5;244mmon-reload[39m[10D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;5;244memon-reload[39m[11D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;5;244maemon-reload[39m[12D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[38;5;244mdaemon-reload[39m[13D[39ms[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;5;244mtatus codeby-nginx.service[39m[26D[39mt[39ma[39mr[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23Dt c[1mc[0m[1mc[1mo[0m[1mo[1md[0m[1md[1me[0m[1me[1mb[0m[1mb[1my[0m[1my[1m-[0m[1m-[1mn[0m[8D[0mc[0mo[0md[0me[0mb[0my[0m-[0mnginx.service[?1l>[?2004l
+                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hsudo systemctl start codeby-nginx.service[41D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [36ms[36my[36ms[36mt[36me[36mm[36mc[36mt[36ml[39m[27C[P[22C [23D[P[21C [22D[P[21C [22Da codeby-nginx.service[21Dt codeby-nginx.service[21Du codeby-nginx.service[21Ds codeby-nginx.service[21D[?1l>[?2004l
+[?1h=[0;1;32m●[0m codeby-nginx.service - My Custom Nginx Web Server[m
+     Loaded: loaded (]8;;file://kali/etc/systemd/system/codeby-nginx.service\/etc/systemd/system/codeby-nginx.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-06-15 08:55:47 EDT; 20min ago[m
+ Invocation: c7371a166dbe4a2a864b0bd4c0e49d47[m
+   Main PID: 32165 (nginx)[m
+      Tasks: 5[0;38:5:245m (limit: 4398)[0m[m
+     Memory: 4.5M (peak: 5.2M)[m
+        CPU: 26ms[m
+     CGroup: /system.slice/codeby-nginx.service[m
+             ├─[0;38:5:245m32165 "nginx: master process /usr/sbin/nginx"[0m[m
+             ├─[0;38:5:245m32166 "nginx: worker process"[0m[m
+             ├─[0;38:5:245m32167 "nginx: worker process"[0m[m
+             ├─[0;38:5:245m32168 "nginx: worker process"[0m[m
+             └─[0;38:5:245m32169 "nginx: worker process"[0m[m
+[m
+Jun 15 08:55:47 kali systemd[1]: Starting codeby-nginx.service - My Custom Nginx Web Server...[m
+Jun 15 08:55:47 kali systemd[1]: Started codeby-nginx.service - My Custom Nginx Web Server.[m
+[K[?1l>                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hc[1mc[0m[1mc[1mu[0m[0m[4mc[0m[4mu[24m[4mc[4mu[4mr[24m[4mr[4ml[24m[24m[36mc[24m[36mu[24m[36mr[24m[36ml[39m[36ml[36m [39m[36ml[39m[39m httP p://localhost[?1l>[?2004l
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apache2 Debian Default Page: It works</title>
+    <style type="text/css" media="screen">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <img src="/icons/openlogo-75.png" alt="Debian Logo" class="floating_element"/>
+        <span class="floating_element">
+          Apache2 Debian Default Page
+        </span>
+      </div>
+<!--      <div class="table_of_contents floating_element">
+        <div class="section_header section_header_grey">
+          TABLE OF CONTENTS
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#about">About</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#changes">Changes</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#scope">Scope</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#files">Config files</a>
+        </div>
+      </div>
+-->
+      <div class="content_section floating_element">
+
+
+        <div class="section_header section_header_red">
+          <div id="about"></div>
+          It works!
+        </div>
+        <div class="content_section_text">
+          <p>
+                This is the default welcome page used to test the correct 
+                operation of the Apache2 server after installation on Debian systems.
+                If you can read this page, it means that the Apache HTTP server installed at
+                this site is working properly. You should <b>replace this file</b> (located at
+                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
+          </p>
+
+
+          <p>
+                If you are a normal user of this web site and don't know what this page is
+                about, this probably means that the site is currently unavailable due to
+                maintenance.
+                If the problem persists, please contact the site's administrator.
+          </p>
+
+        </div>
+        <div class="section_header">
+          <div id="changes"></div>
+                Configuration Overview
+        </div>
+        <div class="content_section_text">
+          <p>
+                Debian's Apache2 default configuration is different from the
+                upstream default configuration, and split into several files optimized for
+                interaction with Debian tools. The configuration system is
+                <b>fully documented in
+                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
+                documentation. Documentation for the web server itself can be
+                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>
+                package was installed on this server.
+
+          </p>
+          <p>
+                The configuration layout for an Apache2 web server installation on Debian systems is as follows:
+          </p>
+          <pre>
+/etc/apache2/
+|-- apache2.conf
+|       `--  ports.conf
+|-- mods-enabled
+|       |-- *.load
+|       `-- *.conf
+|-- conf-enabled
+|       `-- *.conf
+|-- sites-enabled
+|       `-- *.conf
+          </pre>
+          <ul>
+                        <li>
+                           <tt>apache2.conf</tt> is the main configuration
+                           file. It puts the pieces together by including all remaining configuration
+                           files when starting up the web server.
+                        </li>
+
+                        <li>
+                           <tt>ports.conf</tt> is always included from the
+                           main configuration file. It is used to determine the listening ports for
+                           incoming connections, and this file can be customized anytime.
+                        </li>
+
+                        <li>
+                           Configuration files in the <tt>mods-enabled/</tt>,
+                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
+                           particular configuration snippets which manage modules, global configuration
+                           fragments, or virtual host configurations, respectively.
+                        </li>
+
+                        <li>
+                           They are activated by symlinking available
+                           configuration files from their respective
+                           *-available/ counterparts. These should be managed
+                           by using our helpers
+                           <tt>
+                                a2enmod,
+                                a2dismod,
+                           </tt>
+                           <tt>
+                                a2ensite,
+                                a2dissite,
+                            </tt>
+                                and
+                           <tt>
+                                a2enconf,
+                                a2disconf
+                           </tt>. See their respective man pages for detailed information.
+                        </li>
+
+                        <li>
+                           The binary is called apache2. Due to the use of
+                           environment variables, in the default configuration, apache2 needs to be
+                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.
+                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
+                           default configuration.
+                        </li>
+          </ul>
+        </div>
+
+        <div class="section_header">
+            <div id="docroot"></div>
+                Document Roots
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                By default, Debian does not allow access through the web browser to
+                <em>any</em> file apart of those located in <tt>/var/www</tt>,
+                <a href="https://httpd.apache.org/docs/2.4/mod/mod_userdir.html" rel="nofollow">public_html</a>
+                directories (when enabled) and <tt>/usr/share</tt> (for web
+                applications). If your site is using a web document root
+                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
+                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
+            </p>
+            <p>
+                The default Debian document root is <tt>/var/www/html</tt>. You
+                can make your own virtual hosts under /var/www. This is different
+                to previous releases which provides better security out of the box.
+            </p>
+        </div>
+
+        <div class="section_header">
+          <div id="bugs"></div>
+                Reporting Problems
+        </div>
+        <div class="content_section_text">
+          <p>
+                Please use the <tt>reportbug</tt> tool to report bugs in the
+                Apache2 package with Debian. However, check <a
+                href="https://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0"
+                rel="nofollow">existing bug reports</a> before reporting a new bug.
+          </p>
+          <p>
+                Please report bugs specific to modules (such as PHP and others)
+                to respective packages, not to the web server itself.
+          </p>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <div class="validator">
+    </div>
+  </body>
+</html>
+
+                                                                                                                 ]0;root@kali: /home/kali
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m/home/kali[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004he[4me[24m[4me[4mx[24m[24m[36me[24m[36mx[39m[36me[36mx[36mi[39m[39m[4me[39m[4mx[39m[4mi[24m[4mi[4mt[24m[24m[36me[24m[36mx[24m[36mi[24m[36mt[39m[?1l>[?2004l
+
+Script done on 2026-06-15 09:17:13-04:00 [COMMAND_EXIT_CODE="0"]
