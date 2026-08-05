@@ -1,0 +1,9 @@
+[web]
+prod
+
+[web:vars]
+ansible_host=127.0.0.1
+ansible_port=2200
+ansible_user=vagrant
+ansible_ssh_private_key_file=/home/kali/codeby-devops/lesson12/.vagrant/machines/prod/virtualbox/private_key
+env_param=prod
