@@ -1,0 +1,28 @@
+---
+- name: Configure servers
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - wget
+          - htop
+          - nginx
+        state: present
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Show environment
+      debug:
+        msg: "This host is in {{ environment }} environment"
