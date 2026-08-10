@@ -1,0 +1,31 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Install MySQL on Ubuntu
+  apt:
+    name:
+      - mysql-server
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install MariaDB on CentOS
+  yum:
+    name:
+      - mariadb-server
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Start MySQL Ubuntu
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+  when: ansible_os_family == "Debian"
+
+- name: Start MariaDB CentOS
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+  when: ansible_os_family == "RedHat"
+# tasks file for roles/mysql

@@ -1,0 +1,8 @@
+---
+- name: Install Wordpress stack
+  hosts: all
+  become: true
+
+  roles:
+    - mysql
+    - apache
