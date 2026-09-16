@@ -1,0 +1,2 @@
+NAME               READY   STATUS    RESTARTS   AGE
+nginx-imperative   1/1     Running   0          56s

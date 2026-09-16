@@ -1,0 +1,4 @@
+NAME                           READY   STATUS    RESTARTS   AGE
+nginx-config-5dc6f9777-q9cmc   1/1     Running   0          89s
+nginx-declarative              1/1     Running   0          34s
+nginx-imperative               1/1     Running   0          3m19s
