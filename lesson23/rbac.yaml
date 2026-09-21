@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: wordpress-diagnostics
+  namespace: dev
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: wordpress-diagnostics
+  namespace: dev
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: wordpress-diagnostics
+  namespace: dev
+subjects:
+  - kind: ServiceAccount
+    name: wordpress-diagnostics
+    namespace: dev
+roleRef:
+  kind: Role
+  name: wordpress-diagnostics
+  apiGroup: rbac.authorization.k8s.io
