@@ -1,0 +1,91 @@
+namespace: dev
+
+nameOverride: ""
+fullnameOverride: ""
+
+mysql:
+  image:
+    repository: mysql
+    tag: "8.0.36"
+    pullPolicy: IfNotPresent
+
+  replicas: 1
+
+  service:
+    name: mysql
+    port: 3306
+
+  persistence:
+    enabled: true
+    storageClass: local
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    hostPath: /mnt/data/lesson24/mysql
+    nodeName: lesson21-control-plane
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  nodeSelector:
+    kubernetes.io/hostname: lesson21-control-plane
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+
+wordpress:
+  image:
+    repository: wordpress
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  replicas: 1
+
+  service:
+    name: ""
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+  persistence:
+    enabled: true
+    storageClass: local
+    accessMode: ReadWriteOnce
+    size: 2Gi
+    hostPath: /mnt/data/lesson24/wordpress
+    nodeName: lesson21-worker
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 50
+
+  nodeSelector:
+    kubernetes.io/hostname: lesson21-worker
+
+ingress:
+  enabled: true
+  className: nginx
+  host: wordpress.local
+  path: /
+  pathType: Prefix
+
+mysqlAuth:
+  rootPassword: rootpassword
+  database: wordpress
+  username: wordpress
+  password: wordpresspassword
