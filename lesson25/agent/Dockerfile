@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jdk
 
 RUN apt-get update && \
-    apt-get install -y maven openssh-server && \
+    apt-get install -y maven openssh-server git && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p /run/sshd
 
