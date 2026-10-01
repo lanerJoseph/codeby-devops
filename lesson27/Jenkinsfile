@@ -1,0 +1,116 @@
+pipeline {
+    agent { label 'maven' }
+
+    stages {
+        stage('Detect Changes') {
+            steps {
+                script {
+                    def previousCommit = sh(
+                        script: 'git rev-parse HEAD^',
+                        returnStdout: true
+                    ).trim()
+
+                    def changedFiles = sh(
+                        script: "git diff --name-only ${previousCommit} HEAD",
+                        returnStdout: true
+                    ).trim()
+
+                    echo "Changed files:"
+                    echo changedFiles
+
+                    env.CHANGED_APPS = ''
+
+                    if (changedFiles.contains('lesson27/hello-world/')) {
+                        env.CHANGED_APPS += 'hello-world '
+                    }
+
+                    if (changedFiles.contains('lesson27/hello-jenkins/')) {
+                        env.CHANGED_APPS += 'hello-jenkins '
+                    }
+
+                    if (changedFiles.contains('lesson27/hello-devops/')) {
+                        env.CHANGED_APPS += 'hello-devops '
+                    }
+
+                    echo "Changed applications: ${env.CHANGED_APPS}"
+                }
+            }
+        }
+
+        stage('Build, Test, Analysis, Quality Gate and Deploy') {
+            steps {
+                script {
+                    def apps = env.CHANGED_APPS.trim().split()
+
+                    if (apps.size() == 0 || apps[0] == '') {
+                        echo 'No applications changed. Nothing to build.'
+                        return
+                    }
+
+                    def parallelStages = [:]
+
+                    for (String app : apps) {
+                        def currentApp = app
+
+                        parallelStages[currentApp] = {
+                            stage(currentApp) {
+                                dir("lesson27/${currentApp}") {
+
+                                    stage("${currentApp} - Build") {
+                                        sh 'mvn -B clean package -DskipTests'
+                                    }
+
+                                    stage("${currentApp} - Test") {
+                                        sh 'mvn -B test'
+                                    }
+
+                                    stage("${currentApp} - SonarQube Analysis") {
+                                        withSonarQubeEnv('sonarqube') {
+                                            sh """
+                                                mvn -B sonar:sonar \
+                                                  -Dsonar.projectKey=${currentApp} \
+                                                  -Dsonar.projectName=${currentApp}
+                                            """
+                                        }
+                                    }
+
+                                    stage("${currentApp} - Quality Gate") {
+                                        timeout(time: 5, unit: 'MINUTES') {
+                                            waitForQualityGate abortPipeline: true
+                                        }
+                                    }
+
+                                    stage("${currentApp} - Deploy") {
+                                        sh """
+                                            echo "Deploying ${currentApp}"
+
+                                            java -cp target/*.jar com.example.App > deploy.log 2>&1 &
+                                            PID=\$!
+
+                                            sleep 2
+
+                                            cat deploy.log
+
+                                            kill \$PID 2>/dev/null || true
+                                            wait \$PID 2>/dev/null || true
+
+                                            echo "Application ${currentApp} started successfully"
+                                        """
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    parallel parallelStages
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+    }
+}
