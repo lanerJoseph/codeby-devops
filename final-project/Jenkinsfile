@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+
+    environment {
+        APP_DIR = 'final-project/app'
+        JAVA_HOME = '/opt/java/openjdk'
+        PATH = '/opt/java/openjdk/bin:/usr/local/bin:/usr/bin:/bin'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Java') {
+            steps {
+                sh 'java -version'
+            }
+        }
+
+        stage('Build and test') {
+            steps {
+                dir("${APP_DIR}") {
+                    sh './mvnw -B clean verify'
+                }
+            }
+            post {
+                always {
+                    junit testResults: 'final-project/app/target/surefire-reports/*.xml',
+                          allowEmptyResults: false
+                }
+            }
+        }
+
+        stage('Archive artifact') {
+            steps {
+                archiveArtifacts artifacts: 'final-project/app/target/devops-demo.jar',
+                                 fingerprint: true
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build, tests and artifact archiving completed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed. Review the stage logs and test reports.'
+        }
+    }
+}

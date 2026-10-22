@@ -1,0 +1,75 @@
+replicaCount: 1
+
+nameOverride: ""
+fullnameOverride: "devops-demo"
+
+image:
+  repository: docker.io/library/devops-demo
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent
+
+containerPorts:
+  http: 8080
+  management: 8081
+
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/path: "/actuator/prometheus"
+  prometheus.io/port: "8081"
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 10001
+  seccompProfile:
+    type: RuntimeDefault
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+
+service:
+  type: ClusterIP
+  ports:
+    http: 8080
+    management: 8081
+
+ingress:
+  enabled: true
+  className: traefik
+  annotations: {}
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 192Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+startupProbe:
+  httpGet:
+    path: /actuator/health
+    port: management
+  periodSeconds: 5
+  failureThreshold: 30
+
+readinessProbe:
+  httpGet:
+    path: /actuator/health
+    port: management
+  periodSeconds: 10
+  timeoutSeconds: 3
+
+livenessProbe:
+  httpGet:
+    path: /actuator/health
+    port: management
+  periodSeconds: 20
+  timeoutSeconds: 3

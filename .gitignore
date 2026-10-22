@@ -1,0 +1,26 @@
+# Terraform local working directory and state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+
+# Keep Terraform provider lock file under version control
+!**/.terraform.lock.hcl
+
+# Maven build output
+**/target/
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
