@@ -1,0 +1,8 @@
+.git
+.gitignore
+Dockerfile
+target/*
+!target/devops-demo.jar
+.idea
+.vscode
+*.iml

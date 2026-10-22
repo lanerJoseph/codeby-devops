@@ -1,0 +1,39 @@
+name: Final Project CI
+
+on:
+  push:
+    paths:
+      - "final-project/app/**"
+      - ".github/workflows/final-project-ci.yml"
+  pull_request:
+    paths:
+      - "final-project/app/**"
+      - ".github/workflows/final-project-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Build and test Java application
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: final-project/app
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: final-project/app/pom.xml
+
+      - name: Build and run tests
+        run: ./mvnw -B clean verify
